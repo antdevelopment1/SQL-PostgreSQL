@@ -101,3 +101,27 @@ Example:
 SELECT * FROM customers
 WHERE gender = 'M'
 ORDER BY date_joined ASC;
+
+-- =================================================================================================================
+-- SQL FOR LIMITING THE NUMBER OF ROWS RETURNED IN A SELECT QUERY AFTER IT'S BEEN SORTED TO THE FIRST NUMBER OF ROWS
+-- =================================================================================================================
+SELECT * FROM table_name
+WHERE column_name1 = 'value'
+LIMIT number;
+Example: 
+
+SELECT * FROM address
+WHERE city = 'Worthing'
+LIMIT 8;
+
+-- =====================================================
+-- SQL FOR LIMITING THE NUMBER OF RESULTS WITH AN OFFSET
+-- =====================================================
+SELECT * FROM table_name
+WHERE column_name1 = 'value'
+LIMIT n OFFSET m;
+Example:
+
+SELECT * FROM orders 
+WHERE quantity > 1
+LIMIT 5 OFFSET 5;
