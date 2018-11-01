@@ -134,3 +134,15 @@ SELECT DISTINCT column_name1 FROM table_name;
 
 Example: 
 SELECT DISTINCT last_name FROM customers; 
+
+
+
+-- ==================================================
+-- SQL FOR ONLY RETURNING A COLUMN IN THE RESULTS SET
+-- ==================================================
+-- Cannot use alias inside a WHERE clause. We have to refer to the original column name in the database
+-- We can use an alias name when using the ORDER BY statement
+SELECT column_name1 AS alias FROM table_name;  
+
+Example: 
+SELECT wholesale_price AS price FROM products; 
