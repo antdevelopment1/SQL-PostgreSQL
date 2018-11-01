@@ -125,3 +125,12 @@ Example:
 SELECT * FROM orders 
 WHERE quantity > 1
 LIMIT 5 OFFSET 5;
+
+
+-- ========================================================
+-- SQL FOR ONLY RETURNING DISTINCT VALUES IN THE RESULT SET
+-- ========================================================
+SELECT DISTINCT column_name1 FROM table_name; 
+
+Example: 
+SELECT DISTINCT last_name FROM customers; 
