@@ -52,3 +52,14 @@ Example:
 SELECT * FROM customers 
 WHERE first_name IN ('Emily','George','John')
 AND last_name NOT IN ('Edwards','Smith','Simmonds');
+
+-- =======================================
+-- SQL FOR WHERE CLAUSE BETWEEN TWO VALUES
+-- =======================================
+
+SELECT * FROM table_name 
+WHERE column_name1 BETWEEN 'value1' AND 'value2';
+Example: 
+
+SELECT * FROM customers 
+WHERE date_joined BETWEEN '2017-01-01'AND '2017-03-31';
