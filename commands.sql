@@ -18,7 +18,6 @@ SELECT first_name, last_name FROM customers;
 -- =====================
 -- SQL FOR WHERE CLAUSES
 -- =====================
-
 SELECT column_name1, column_name2 FROM table_name
 WHERE column_name1 = 'Value';
 Example: 
@@ -29,7 +28,6 @@ WHERE in_stock = 'True';
 -- ======================================================
 -- SQL FOR MULTIPLE WHERE CLAUSES IN ONE SELECT STATEMENT
 -- ======================================================
-
 SELECT column_name1, column_name2 FROM table_name 
 WHERE column_name1 = 'Value'
 AND column_name2 = 'Value';
@@ -56,10 +54,29 @@ AND last_name NOT IN ('Edwards','Smith','Simmonds');
 -- =======================================
 -- SQL FOR WHERE CLAUSE BETWEEN TWO VALUES
 -- =======================================
-
 SELECT * FROM table_name 
 WHERE column_name1 BETWEEN 'value1' AND 'value2';
 Example: 
 
 SELECT * FROM customers 
 WHERE date_joined BETWEEN '2017-01-01'AND '2017-03-31';
+
+
+-- ==========================================================================
+-- SQL FOR USING A LIKE OPERATOR TO MATCH ANY NUMBER OF CHARACTERS IN A QUERY
+-- ==========================================================================
+
+SELECT * FROM table_name 
+WHERE column_name1 LIKE '%pattern%';
+Example:
+
+SELECT * FROM address
+WHERE postcode LIKE 'BN%';
+SQL for using a LIKE operator to match one character in a query: 
+
+SELECT * FROM table_name 
+WHERE column_name1 LIKE '_pattern_';
+Example:
+
+SELECT * FROM customers
+WHERE last_name LIKE '_mit_';
