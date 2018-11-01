@@ -15,3 +15,14 @@ Example:
 SELECT first_name, last_name FROM customers; 
 
 
+-- =====================
+-- SQL for WHERE clause:
+-- =====================
+
+SELECT column_name1, column_name2 FROM table_name
+WHERE column_name1 = 'Value';
+Example: 
+
+SELECT id, name, season FROM products
+WHERE in_stock = 'True';
+
