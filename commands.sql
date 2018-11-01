@@ -65,7 +65,6 @@ WHERE date_joined BETWEEN '2017-01-01'AND '2017-03-31';
 -- ==========================================================================
 -- SQL FOR USING A LIKE OPERATOR TO MATCH ANY NUMBER OF CHARACTERS IN A QUERY
 -- ==========================================================================
-
 SELECT * FROM table_name 
 WHERE column_name1 LIKE '%pattern%';
 Example:
@@ -80,3 +79,25 @@ Example:
 
 SELECT * FROM customers
 WHERE last_name LIKE '_mit_';
+
+-- ===================================================
+-- SQL STATEMENT FOR ORDERING DATA IN DESCENDING ORDER
+-- ===================================================
+SELECT * FROM table_name
+ORDER BY column_name1 DESC;
+Example:
+
+SELECT * FROM orders 
+ORDER BY order_date DESC;
+
+-- ===================================================
+-- SQL STATEMENT FOR ORDERING DATA IN ASCENDING ORDER
+-- ===================================================
+SELECT * FROM table_name
+WHERE column_name1 = 'value'
+ORDER BY column_name2 ASC;
+Example: 
+
+SELECT * FROM customers
+WHERE gender = 'M'
+ORDER BY date_joined ASC;
