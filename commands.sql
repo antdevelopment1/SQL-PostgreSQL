@@ -170,3 +170,23 @@ join customers cu on o.customer_id = cu.id;
 -- Another example
 select pr.name, o.quantity, o.price from orders o
 join products pr on o.product_id = pr.id;
+
+
+===================================================================
+-- SQL FOR JOINING TWO LABELS WITH AN INNER JOIN AND A WHERE CLAUSE
+===================================================================
+SELECT t1.column_name1, t1.column_name2, t2.column_name1 FROM table_name1 t1 
+INNER JOIN table_name2 t2 ON t1.column_name1 = t2.column_name2 
+WHERE t1.column_name1 = 'value1';
+Example: 
+
+SELECT p.name, o.quantity, o.order_date FROM products p 
+INNER JOIN orders o ON p.id = o.product_id 
+WHERE p.name = 'Shoes';
+
+-- Another Example
+select cu.id, cu.first_name, cu.last_name, o.quantity, o.price, o.order_date from orders o
+join customers cu on o.customer_id = cu.id
+where cu.id in (2, 4, 6, 8, 9)
+and o.quantity > 1
+order by o.order_date ASC;
