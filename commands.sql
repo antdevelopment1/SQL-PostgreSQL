@@ -126,7 +126,6 @@ SELECT * FROM orders
 WHERE quantity > 1
 LIMIT 5 OFFSET 5;
 
-
 -- ========================================================
 -- SQL FOR ONLY RETURNING DISTINCT VALUES IN THE RESULT SET
 -- ========================================================
@@ -134,8 +133,6 @@ SELECT DISTINCT column_name1 FROM table_name;
 
 Example: 
 SELECT DISTINCT last_name FROM customers; 
-
-
 
 -- ==================================================
 -- SQL FOR ONLY RETURNING A COLUMN IN THE RESULTS SET
@@ -146,3 +143,30 @@ SELECT column_name1 AS alias FROM table_name;
 
 Example: 
 SELECT wholesale_price AS price FROM products; 
+
+-- =============================================
+-- SQL FOR JOINING TWO TABLES WITH AN INNER JOIN
+-- =============================================
+SELECT t1.column_name1, t1.column_name2, t2.column_name1 FROM table_name1 t1
+INNER JOIN table_name2 t2 ON t1.column_name2 = t2.column_name1;
+Example: 
+
+SELECT c.first_name, c.last_name, a.postcode FROM customers c 
+INNER JOIN address a ON c.address_id = a.id;
+
+-- More examples of inner joins
+
+select * from orders;
+select * from products;
+
+select customers.first_name, customers.last_name, orders.quantity, orders.price from orders
+-- We can also say join without inner. When you say join it defaults to inner join
+inner join customers on orders.customer_id = customers.id;
+
+-- Using alias'
+select cu.id, cu.first_name, cu.last_name, o.quantity, o.price from orders o
+join customers cu on o.customer_id = cu.id;
+
+-- Another example
+select pr.name, o.quantity, o.price from orders o
+join products pr on o.product_id = pr.id;
