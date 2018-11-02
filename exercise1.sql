@@ -12,3 +12,5 @@ AND quantity < 4;
 SELECT * FROM products
 WHERE season = 'Summer'
 AND wholesale_price >= 20.00;
+
+
