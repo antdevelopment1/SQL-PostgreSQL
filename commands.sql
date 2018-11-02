@@ -209,20 +209,45 @@ WHERE c.date_joined BETWEEN '20170101' AND '20173006';
 SELECT t1.column_name, t1.column_name2, t2.column_name1 FROM table_name1 t1
 RIGHT JOIN table_name2 t2 ON t1.column_name1 = t2column_name1
 WHERE t1.column_name2 = 'value1';
-Example:
 
+Example:
 SELECT a.city, a.postcode, c.first_name, c.last_name FROM address a 
 RIGHT JOIN customers c ON c.address_id = a.id 
-WHERE c.date_joined BETWEEN '20170101' AND ‘20173006';
+where c.date_joined between '2017-01-01' AND '2017-03-06';
 
 -- ============================================
 -- SQL FOR JOINING TWO TABLES USING A FULL JOIN
 -- ============================================
 SELECT t1.column_name, t1.column_name2, t2.column_name1 FROM table_name1 t1
+
 FULL JOIN table_name2 t2 ON t1.column_name1 = t2column_name1
 WHERE t1.column_name2 = 'value1';
-Example:
 
+Example:
 SELECT a.city, a.postcode, c.first_name, c.last_name FROM address a 
 FULL JOIN customers c ON a.id = c.address_id 
-WHERE c.date_joined BETWEEN '20170101' AND ‘20173006';
+WHERE c.date_joined BETWEEN '20170101' AND '20173006';
+
+
+-- =============================================
+-- SQL FOR JOINING MORE THAN TWO TABLES TOGETHER
+-- =============================================
+SQL for joining more than two tables together: 
+
+SELECT t1.column_name, t2.column_name2, t3.column_name1 FROM table_name1 t1
+INNER JOIN table_name2 t2 ON t1.column_name1 = t2column_name1
+INNER JOIN table_name3 t3 ON t1.column_name2 = t3.column_name2
+WHERE t1.column_name2 = 'value1'
+AND t3.column_name2 = 'value2';
+Example:
+
+SELECT a.city, a.postcode, c.first_name, c.last_name, o.product_id, o.quantity, o.order_date FROM address a 
+INNER JOIN customers c ON a.id = c.address_id 
+INNER JOIN orders o ON o.customer_id = c.id
+where c.date_joined between '2017-01-01' and '2017-03-06'
+and o.product_id < 4;
+
+
+
+
+
