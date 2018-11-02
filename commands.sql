@@ -249,5 +249,25 @@ and o.product_id < 4;
 
 
 
+-- =======================================================================
+-- SQL FOR JOINING MORE THAN TWO TABLES TOGETHER USING UNION AND UNION ALL
+-- =======================================================================
+SELECT column_name1, column_name2 FROM table_name1 
+UNION
+SELECT column_name1, column_name2 FROM table_name2;
+SELECT column_name1, column_name2 FROM table_name1 
+UNION ALL
+SELECT column_name1, column_name2 FROM table_name2;
+Example: 
+
+SELECT first_name, last_name FROM customers
+UNION
+SELECT first_name, last_name FROM employees;
+SELECT first_name, last_name FROM customers
+UNION ALL
+SELECT first_name, last_name FROM employees;
+
+
+
 
 
