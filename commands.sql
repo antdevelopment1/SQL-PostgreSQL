@@ -171,7 +171,6 @@ join customers cu on o.customer_id = cu.id;
 select pr.name, o.quantity, o.price from orders o
 join products pr on o.product_id = pr.id;
 
-
 ===================================================================
 -- SQL FOR JOINING TWO TABELS WITH AN INNER JOIN AND A WHERE CLAUSE
 ===================================================================
@@ -190,3 +189,15 @@ join customers cu on o.customer_id = cu.id
 where cu.id in (2, 4, 6, 8, 9)
 and o.quantity > 1
 order by o.order_date ASC;
+
+-- ============================================
+-- SQL FOR JOINING TWO TABLES USING A LEFT JOIN
+-- ============================================
+SELECT t1.column_name, t1.column_name2, t2.column_name1 FROM table_name1 t1
+LEFT JOIN table_name2 t2 ON t1.column_name1 = t2column_name1
+WHERE t1.column_name2 = 'value1';
+
+Example:
+SELECT a.city, a.postcode, c.first_name, c.last_name FROM address a 
+LEFT JOIN customers c ON a.id = c.address_id 
+WHERE c.date_joined BETWEEN '20170101' AND '20173006';
