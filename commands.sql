@@ -201,3 +201,16 @@ Example:
 SELECT a.city, a.postcode, c.first_name, c.last_name FROM address a 
 LEFT JOIN customers c ON a.id = c.address_id 
 WHERE c.date_joined BETWEEN '20170101' AND '20173006';
+
+
+-- =============================================
+-- SQL FOR JOINING TWO TABLES USING A RIGHT JOIN
+-- =============================================
+SELECT t1.column_name, t1.column_name2, t2.column_name1 FROM table_name1 t1
+RIGHT JOIN table_name2 t2 ON t1.column_name1 = t2column_name1
+WHERE t1.column_name2 = 'value1';
+Example:
+
+SELECT a.city, a.postcode, c.first_name, c.last_name FROM address a 
+RIGHT JOIN customers c ON c.address_id = a.id 
+WHERE c.date_joined BETWEEN '20170101' AND ‘20173006';
