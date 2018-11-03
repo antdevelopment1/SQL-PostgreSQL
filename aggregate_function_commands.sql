@@ -34,3 +34,16 @@ SELECT MAX(column_name) FROM table_name;
 
 Example: 
 SELECT MAX(hours) FROM employees; 
+
+SQL for summing a numeric column: 
+
+
+-- ========================================================
+-- SQL FOR SELECTING THE SUM OF A COLUMN FROM A GIVEN TABLE
+-- ========================================================
+
+SELECT SUM(column_name) FROM table_name;  
+
+Example: 
+SELECT SUM(quantity) FROM orders
+WHERE product_id IN (1,2,3);
