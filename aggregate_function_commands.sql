@@ -47,3 +47,14 @@ SELECT SUM(column_name) FROM table_name;
 Example: 
 SELECT SUM(quantity) FROM orders
 WHERE product_id IN (1,2,3);
+
+
+-- ================================================
+-- SQL FOR RETURNING THE AVERAGE VALUE FOR A COLUMN
+-- ================================================
+SELECT AVG(column_name) FROM table_name;  
+
+Example: 
+SELECT AVG(price) FROM orders
+WHERE order_date BETWEEN '20170101' AND '20170131';
+
