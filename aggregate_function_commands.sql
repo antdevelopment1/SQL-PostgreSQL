@@ -76,4 +76,16 @@ SELECT customer_id, product_id, SUM(price) FROM orders
 GROUP BY customer_id, product_id
 ORDER BY customer_id;
 
+-- =========================
+-- SQL USING A HAVING CLAUSE
+-- =========================
+SELECT column_name1, column_name2, AGG(column_name3) FROM table_name
+GROUP BY column_name1, column_name2
+HAVING column_name1 = 'value1';
+
+Example:
+SELECT date_joined, COUNT(id) FROM customers
+GROUP BY date_joined 
+HAVING date_joined BETWEEN '20160101' AND '20161231';
+
 
