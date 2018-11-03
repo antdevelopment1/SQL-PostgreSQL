@@ -58,3 +58,22 @@ Example:
 SELECT AVG(price) FROM orders
 WHERE order_date BETWEEN '20170101' AND '20170131';
 
+select c.first_name, c.last_name, p.name, o.quantity, sum(o.price) from customers c
+inner join orders o on c.id = o.customer_id
+join products p on o.product_id = p.id
+group by c.last_name, c.first_name, p.name, o.quantity
+order by c.last_name;
+
+-- =====================
+-- SQL FOR GROUPING DATA
+-- =====================
+
+SELECT column_name1, column_name2, AGG(column_name3) FROM table_name
+GROUP BY column_name1, column_name2;
+Example:
+
+SELECT customer_id, product_id, SUM(price) FROM orders
+GROUP BY customer_id, product_id
+ORDER BY customer_id;
+
+
