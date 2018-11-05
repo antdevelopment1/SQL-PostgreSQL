@@ -31,3 +31,34 @@ CREATE TABLE movies (
       name VARCHAR(30) UNIQUE NOT NULL, 
       producer_id INT REFERENCES producers(id)
 );
+
+-- =================================
+-- SQL FOR ADDING COLUMNS TO A TABLE
+-- =================================
+ALTER TABLE table_name 
+ADD column_name data_type;
+
+Example: 
+ALTER TABLE directors 
+ADD nationality VARCHAR(20);
+
+-- =======================================================
+-- SQL FOR ADDING COLUMNS WITHIN A TABLE WITH A CONSTRAINT
+-- =======================================================
+ALTER TABLE table_name 
+ADD column_name data_type constraint;
+
+Example: 
+ALTER TABLE directors 
+ADD earnings NUMERIC(6,2) NOT NULL;
+
+-- ======================================
+-- SQL for removing a column from a table
+-- ======================================
+
+ALTER TABLE table_name 
+DROP column_name;
+
+Example: 
+ALTER TABLE directors
+DROP earnings;
